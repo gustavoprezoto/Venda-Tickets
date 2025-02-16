@@ -4,10 +4,8 @@ Aluno: Gustavo Prezoto Boca - 2250373
 
 #### Tecnologias Utilizadas:
 - Node.js com Express
-- Sequelize para persistência de dados
-- Banco de dados local
+- Sequelize para persistência de dados com Banco de dados local MySQL
 - Mustache para renderização de templates
-- Rotas da API e Interface
 
 #### Rotas:
 
