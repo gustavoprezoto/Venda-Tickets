@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets</title>
+</head>
+<body>
+    <h2>My Purchased Tickets</h2>
+
+    <a href="/users/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+    {{#tickets}}
+        <div>
+            <h3>{{name}}</h3>
+            <p>Price: ${{price}}</p>
+            <p>Quantity: {{quantity}}</p>
+            <hr>
+        </div>
+    {{/tickets}}
+
+    {{^tickets}}
+        <p>You have not purchased any tickets yet.</p>
+    {{/tickets}}
+</body>
+</html>

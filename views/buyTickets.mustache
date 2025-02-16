@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets</title>
+</head>
+<body>
+    <h2>Available Tickets</h2>
+
+    <a href="/users/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+    {{#tickets}}
+        <div>
+            <h3>{{name}}</h3>
+            <p>Price: ${{price}}</p>
+            <p>Available: {{quantity_available}}</p>
+
+            {{#is_sold_out}}
+                <p style="color: red;"><strong>Sold Out</strong></p>
+            {{/is_sold_out}}
+
+            {{^is_sold_out}}
+                <form action="/tickets/buy/{{id}}" method="POST">
+                    <button type="submit">Buy Ticket</button>
+                </form>
+            {{/is_sold_out}}
+
+            <hr>
+        </div>
+    {{/tickets}}
+</body>
+</html>

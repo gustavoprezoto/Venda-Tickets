@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{user.name}}!</h2>
+
+    {{#message}}
+        <p style="color: green;">{{message}}</p>
+    {{/message}}
+
+    {{#error}}
+        <p style="color: red;">{{error}}</p>
+    {{/error}}
+
+    <h3>Actions</h3>
+
+    <a href="/tickets/buy">
+        <button>Buy Tickets</button>
+    </a>
+
+    <a href="/tickets/my-tickets">
+        <button>View My Tickets</button>
+    </a>
+
+    <a href="/users/logout">
+        <button>Logout</button>
+    </a>
+
+    {{#user.is_admin}}
+        <h3>Admin Actions</h3>
+
+        <a href="/tickets/create">
+            <button>Create Ticket</button>
+        </a>
+
+        <a href="/tickets/delete">
+            <button>Delete Ticket</button>
+        </a>
+    {{/user.is_admin}}
+
+</body>
+</html>

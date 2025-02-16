@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Ticket = require("./Ticket");
 
 const UserTicket = sequelize.define('UserTicket', {
   id: {
@@ -25,5 +26,7 @@ const UserTicket = sequelize.define('UserTicket', {
   createdAt: 'purchase_date',
   updatedAt: false,
 });
+
+UserTicket.belongsTo(Ticket, { foreignKey: "ticket_id" });
 
 module.exports = UserTicket;
